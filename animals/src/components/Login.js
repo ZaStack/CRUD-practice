@@ -18,7 +18,7 @@ export default function Login(props) {
     const handleSubmit = e => {
         e.preventDefault();
         axiosWithAuth()
-            .post()
+            .post('login', login)
             .then(res => {
                 window.localStorage.setItem('token', res.data.payload)
                 props.history.push('/creatures');
